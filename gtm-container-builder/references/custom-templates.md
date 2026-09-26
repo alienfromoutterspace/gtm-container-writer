@@ -64,8 +64,8 @@ Complete own-code template exports (the `.tpl` `___SECTION___` format — same c
 `templateData` blob) live in [`../templates/`](../templates/), so a build can embed the real source
 instead of a reconstruction: **ID Lookup** as a WEB/SERVER pair (`id-lookup-web.tpl`,
 `id-lookup-server.tpl` — pattern 1, hostname from `getUrl` vs `getEventData`), a **Durable ID
-Resolver** (`durable-id-resolver.tpl` — pattern 7, browser↔server freshest cookie), a **Write to
-Firestore** server tag, and a **buyer_accepts_marketing → consent** web variable. To use one, add a
+Resolver** (`durable-id-resolver.tpl` — pattern 7, browser↔server freshest cookie), and a
+**Write to Firestore** server tag (`write-to-firestore.tpl`). To use one, add a
 `customTemplate[]` entry whose `templateData` is the file's **byte-exact** contents (fresh
 `templateId`, this container's `accountId`/`containerId`, no `galleryReference`), then reference it
 as `cvt_<containerId>_<templateId>`. They're also directly importable via GTM's Template Editor.

@@ -21,7 +21,6 @@ These serve two purposes:
 | `id-lookup-server.tpl` | ID Lookup | `MACRO` (variable) | SERVER | The sGTM counterpart of `id-lookup-web.tpl` — identical rule UI and match logic, but keyed off the **incoming event data**: hostname comes from `getEventData('page_hostname')`, falling back to parsing it out of `page_location`. Declares the `read_event_data` permission. Keep the two in sync when onboarding a market (**SKILL.md pattern 1**, WEB-vs-SERVER note). |
 | `durable-id-resolver.tpl` | Durable ID Resolver (browser ↔ server cookie) | `MACRO` (variable) | SERVER | Per request, picks the right copy of a click/identity cookie between the vendor's browser-set value and your server-set (Cookie Monster) copy — **oldest** for identity cookies (must survive), **newest** for click cookies (latest wins), with `prefer*` variants for values that carry no timestamp. Optional seed path builds a correctly-formatted value from a raw click ID on the first request. One instance per identifier; feed the *same* variable to both the cookie-writer and the CAPI tag. Declares `get_cookies` + `logging`. The pattern-7 companion to Cookie Monster. |
 | `write-to-firestore.tpl` | Hephaestus - Write to Firestore | `TAG` | SERVER | Writes a set of attributes to a Firestore document. Two modes: **Replace entire document**, or **Edit or add** (per-attribute "overwrite if exists" control, reading the existing doc first). Needs the `access_firestore` (`read_write`) and `logging` permissions declared in the template. |
-| `consent-from-buyer-marketing.tpl` | buyer_accepts_marketing → consent | web template variable | WEB | Maps a boolean `buyer_accepts_marketing` field (e.g. a Shopify webhook value) to a Google Consent Mode v2 state object — granting `ad_storage`, `ad_user_data`, `ad_personalization`, `analytics_storage`, `personalization_storage` on consent, with `functionality_storage` / `security_storage` always granted. |
 
 All three are **own-code** templates (their `INFO` carries the placeholder `"id": "cvt_temp_public_id"`,
 not a `galleryReference`), so a tag/variable that uses one is encoded
@@ -34,8 +33,8 @@ not a `galleryReference`), so a tag/variable that uses one is encoded
 - The template appears under your container's own templates and can be added like any tag/variable.
 
 `id-lookup-server.tpl`, `durable-id-resolver.tpl`, and `write-to-firestore.tpl` are **server**
-templates — import them in a **Server** container's Template Editor. `id-lookup-web.tpl` and `consent-from-buyer-marketing.tpl`
-are **web** templates. The two ID Lookup files are the WEB and SERVER halves of the same variable —
+templates — import them in a **Server** container's Template Editor. `id-lookup-web.tpl` is a
+**web** template. The two ID Lookup files are the WEB and SERVER halves of the same variable —
 in a paired web+sGTM setup you typically import both and keep their rule tables aligned.
 
 ## Use one inside a container JSON (the `customTemplate[]` workflow)

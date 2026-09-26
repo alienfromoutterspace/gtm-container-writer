@@ -42,8 +42,7 @@ format. They ship with the skill (so Claude can embed the real source as a `cust
 when building a container) **and** are separately downloadable — grab any `.tpl` and import it
 straight into GTM's Template Editor. Currently included: **ID Lookup** as a Web/Server pair
 (hostname→ID variable, pattern 1), a **Durable ID Resolver** (browser↔server freshest-cookie
-variable, pattern 7), a **Write to Firestore** server tag, and a **buyer_accepts_marketing →
-consent** web variable. See
+variable, pattern 7), and a **Write to Firestore** server tag. See
 [`templates/README.md`](./gtm-container-builder/templates/README.md) for the
 catalogue, import steps, and the `.tpl` → `customTemplate[]` workflow.
 
