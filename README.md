@@ -1,29 +1,29 @@
-# GTM Container Builder — a Claude Skill
+# GTM Container Builder: a Claude Skill
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Skill](https://img.shields.io/badge/Claude-Skill-8A63D2.svg)](https://docs.claude.com/en/docs/claude-code/skills)
 [![Python](https://img.shields.io/badge/Python-3%20(stdlib%20only)-3776AB.svg)](#helper-scripts)
 
 A [Claude Skill](https://docs.claude.com/en/docs/claude-code/skills) for reading, writing,
-validating, and editing **Google Tag Manager (GTM) container JSON exports** — both **Web** and
-**Server-side (sGTM)**. It's the format you get from **Admin → Export Container** and import via
+validating, and editing **Google Tag Manager (GTM) container JSON exports**, both Web and
+Server-side (sGTM). It's the format you get from **Admin → Export Container** and import via
 **Admin → Import Container**.
 
-A GTM export is a reference graph — tags point at triggers, triggers at variables, variables at
-other variables, custom templates have a `cvt_*` encoding — so one dangling reference makes the
-import fail or breaks silently at runtime. This skill gives Claude the rules to keep that graph
+A GTM export is a reference graph: tags point at triggers, triggers at variables, variables at
+other variables, and custom templates use a `cvt_*` encoding. One dangling reference makes the
+import fail or breaks the container silently at runtime. This skill gives Claude the rules to keep that graph
 intact, a catalogue of every entity/type code, the common architectural patterns, sanitized
 examples, and Python helpers to scaffold/inspect/validate/diff containers.
 
-> **⚠️ Work in progress.** This skill does **not** cover every existing vendor and tag type. It
+> **⚠️ Work in progress.** This skill does not cover every existing vendor and tag type. It
 > contains everything I've encountered so far, and it covers what most GTM and sGTM setups
-> generally use. Expect gaps for less common vendors and tag types — contributions welcome.
+> generally use. Expect gaps for less common vendors and tag types. Contributions are welcome.
 
 ## What it does
 
-- **Edit an existing export** — add/change/remove entities and hand back a valid, importable file
+- **Edit an existing export:** add/change/remove entities and hand back a valid, importable file
   with references intact.
-- **Build a new container from scratch** — scaffold a Web or Server shell and fill it with tags,
+- **Build a new container from scratch:** scaffold a Web or Server shell and fill it with tags,
   triggers, and variables.
 - **Validate** structure, reference integrity, and ID uniqueness before import.
 - **Inspect** an export for a summary of what's inside.
@@ -63,19 +63,19 @@ cp -r gtm-container-writer/gtm-container-builder .claude/skills/
 cp -r gtm-container-writer/gtm-container-builder ~/.claude/skills/
 ```
 
-No dependencies — the scripts use only the Python 3 standard library. Start a new Claude session
+No dependencies. The scripts use only the Python 3 standard library. Start a new Claude session
 and it loads automatically when a request matches (a GTM export, a `GTM-XXXXXX` container,
 `containerVersion`, sGTM, scaffolding/validating/diffing, custom templates).
 
 The skill is a standard `SKILL.md` + resources bundle, so it also works anywhere skills are
-supported (Claude Desktop / claude.ai upload, Agent SDK) — point the uploader at
+supported (Claude Desktop / claude.ai upload, Agent SDK). Point the uploader at
 `gtm-container-builder/`.
 
 ## Usage
 
 Ask in natural language:
 
-- *"Here's my GTM export — add a GA4 event tag for `add_to_cart` on the ecommerce regex trigger."*
+- *"Here's my GTM export. Add a GA4 event tag for `add_to_cart` on the ecommerce regex trigger."*
 - *"Scaffold a new server-side container called `Acme sGTM`."*
 - *"Validate this container and tell me what's broken."*
 - *"Diff these two exports and summarize what changed."*
@@ -85,10 +85,10 @@ validate before handing anything back.
 
 ### Helper scripts
 
-Run them directly if you like — they're the same ones Claude uses:
+You can also run them directly. They're the same ones Claude uses:
 
 ```bash
-# Summary of a container — run this first
+# Summary of a container (run this first)
 python gtm-container-builder/scripts/inspect.py path/to/GTM-XXXXXX.json
 
 # Validate structure, references, and ID uniqueness (run before importing)
@@ -115,21 +115,21 @@ validity, and required fields.
 Every JSON in `examples/` is sanitized: account IDs, container IDs, public IDs, hostnames,
 pixel/conversion IDs, API tokens, and brand strings are placeholders (`0000000000`,
 `1111111`/`2222222`, `GTM-WEBXXXX`, `example.cz|.sk|.pl|.hu`, `<AW-CONV-ID-XX>`). Structure and
-field order are unchanged, so they stay accurate templates — see
+field order are unchanged, so they stay accurate templates. See
 [`examples/README.md`](./gtm-container-builder/examples/README.md) for the full scheme.
 
 Vendor names that appear (GA4, Google Ads, Floodlight, Meta, TikTok, Microsoft UET, Seznam,
 Heureka, Stape, community templates by Simo Ahava / Ayudante) are public platforms used as
-examples — not clients, not private data.
+examples. They are not clients or private data.
 
 **Never commit real container exports.** The [`.gitignore`](./.gitignore) ignores stray `*.json`
 container files at the repo root while keeping the sanitized fragments under `examples/`. Real
 exports can hold measurement IDs, conversion labels, first-party hostnames, and sometimes API
-keys — treat them as sensitive.
+keys, so treat them as sensitive.
 
 ## Contributing
 
-Issues and PRs welcome — especially vendors and tag types not covered yet. Sanitize any example
+Issues and PRs are welcome, especially for vendors and tag types not covered yet. Sanitize any example
 first (replace every real ID, hostname, and brand string per the scheme above) and run
 `python gtm-container-builder/scripts/validate.py` on container JSON before submitting.
 
