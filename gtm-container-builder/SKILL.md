@@ -166,6 +166,8 @@ So when adding a new tag that uses an installed custom template, derive the `typ
 
 **Don't hand-edit `templateData`.** The sandboxed JS plus the `signature` in `galleryReference` are how GTM validates Gallery integrity. Copy whole `customTemplate[]` entries between containers; don't surgically patch the sandboxed JS.
 
+**Ready-made own-code templates live in `templates/`.** That folder holds complete `.tpl` exports (the same `___SECTION___` format that fills a `templateData` blob) for the reusable own-code templates behind these patterns — e.g. **ID Lookup** (`id-lookup.tpl`, the pattern-1 hostname→ID variable), a **Write to Firestore** server tag, and a **buyer_accepts_marketing → consent** web variable. When a build needs one, read the matching `.tpl` and embed its **byte-exact** contents as a new `customTemplate[]` entry (fresh `templateId`, this container's `accountId`/`containerId`, no `galleryReference` since they're own-code), then reference it as `cvt_<containerId>_<templateId>`. The files are also directly importable in GTM's Template Editor. See `templates/README.md` for the catalogue and the full `.tpl` → `customTemplate[]` workflow.
+
 ## Where to read more
 
 The catalogue files in `references/` document every type code you'll meet in real exports:
@@ -179,6 +181,7 @@ The catalogue files in `references/` document every type code you'll meet in rea
 | Variable types (`v`, `c`, `jsm`, `smm`, `remm`, `ed`, `sgtmk`…) | `references/variable-types.md` |
 | `client[]` and `transformation[]` (SERVER only)              | `references/server-specific.md`   |
 | Anatomy of the `templateData` blob in custom templates       | `references/custom-templates.md`  |
+| Ready-made own-code `.tpl` templates to embed or import       | `templates/README.md`             |
 
 Each of those reference files links into `examples/` where one real-world JSON example of each entity type is stored. When asked to produce a specific tag/trigger/variable type, **read the matching example first** — it shows the exact field set you need, in the order GTM expects.
 

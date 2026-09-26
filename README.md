@@ -34,6 +34,17 @@ variables, regex-consolidated triggers, source-gating, browser/server `event_id`
 CookieMonster ITP mitigation, centralized `gtcs`/`gtes` settings, server-side PII hashing, and the
 GA4→sGTM transport bus.
 
+## Custom templates (`.tpl`)
+
+[`gtm-container-builder/templates/`](./gtm-container-builder/templates/) holds ready-made GTM
+**custom templates** — frequently-reused own-code templates in the `.tpl` `___SECTION___` export
+format. They ship with the skill (so Claude can embed the real source as a `customTemplate[]` entry
+when building a container) **and** are separately downloadable — grab any `.tpl` and import it
+straight into GTM's Template Editor. Currently included: **ID Lookup** (hostname→ID variable,
+pattern 1), a **Write to Firestore** server tag, and a **buyer_accepts_marketing → consent** web
+variable. See [`templates/README.md`](./gtm-container-builder/templates/README.md) for the
+catalogue, import steps, and the `.tpl` → `customTemplate[]` workflow.
+
 ## Repository layout
 
 ```
@@ -44,6 +55,7 @@ gtm-container-writer/
     ├── SKILL.md                 ← the skill definition Claude loads
     ├── references/              ← type codes, parameter grammar, server specifics, custom templates
     ├── examples/                ← one sanitized JSON per entity type + two importable empty shells
+    ├── templates/               ← ready-made GTM custom templates (.tpl) — embeddable & importable
     └── scripts/                 ← inspect / validate / next_id / scaffold / diff_containers (+ gtmlib)
 ```
 

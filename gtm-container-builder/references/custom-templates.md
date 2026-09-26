@@ -57,3 +57,14 @@ Own-code templates (→ `cvt_<containerId>_<templateId>`) commonly include an **
 a **JSON.parse** helper, and regional S2S/SEM tags. Regional ad platforms (Sklik/SEM, Heureka,
 on-site search, CRO tools) usually ship as community templates and often as a web-pixel template
 plus a separate server S2S variant.
+
+## Ready-made `.tpl` sources in `../templates/`
+
+Complete own-code template exports (the `.tpl` `___SECTION___` format — same content that fills a
+`templateData` blob) live in [`../templates/`](../templates/), so a build can embed the real source
+instead of a reconstruction: **ID Lookup** (`id-lookup.tpl`, pattern 1), a **Write to Firestore**
+server tag, and a **buyer_accepts_marketing → consent** web variable. To use one, add a
+`customTemplate[]` entry whose `templateData` is the file's **byte-exact** contents (fresh
+`templateId`, this container's `accountId`/`containerId`, no `galleryReference`), then reference it
+as `cvt_<containerId>_<templateId>`. They're also directly importable via GTM's Template Editor.
+See [`../templates/README.md`](../templates/README.md).
