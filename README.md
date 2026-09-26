@@ -11,17 +11,7 @@ clients, transformations, custom templates) plus the real-world architectural pa
 production containers maintainable, and ships a set of dependency-free Python helpers for
 scaffolding, inspecting, validating, and diffing containers.
 
-> The format this skill works with is what **Admin → Export Container** produces in the GTM UI,
-> and what **Admin → Import Container** consumes.
-
 ---
-
-## Why this exists
-
-A GTM export is a single JSON file that's really a **graph**: tags reference triggers, triggers
-reference variables, variables reference other variables, tags reference other tags for
-sequencing, and custom-template types have a fiddly `cvt_*` encoding. One broken reference and the
-import fails — or worse, imports fine and breaks silently at runtime.
 
 This skill gives Claude:
 
