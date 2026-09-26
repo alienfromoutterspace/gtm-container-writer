@@ -63,7 +63,8 @@ plus a separate server S2S variant.
 Complete own-code template exports (the `.tpl` `___SECTION___` format — same content that fills a
 `templateData` blob) live in [`../templates/`](../templates/), so a build can embed the real source
 instead of a reconstruction: **ID Lookup** as a WEB/SERVER pair (`id-lookup-web.tpl`,
-`id-lookup-server.tpl` — pattern 1, hostname from `getUrl` vs `getEventData`), a **Write to
+`id-lookup-server.tpl` — pattern 1, hostname from `getUrl` vs `getEventData`), a **Durable ID
+Resolver** (`durable-id-resolver.tpl` — pattern 7, browser↔server freshest cookie), a **Write to
 Firestore** server tag, and a **buyer_accepts_marketing → consent** web variable. To use one, add a
 `customTemplate[]` entry whose `templateData` is the file's **byte-exact** contents (fresh
 `templateId`, this container's `accountId`/`containerId`, no `galleryReference`), then reference it
