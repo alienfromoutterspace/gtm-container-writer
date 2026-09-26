@@ -1,0 +1,221 @@
+[
+  {
+    "accountId": "0000000000",
+    "containerId": "1111111",
+    "triggerId": "358",
+    "name": "CE - GA4 ecommerce (regex)",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+      {
+        "type": "MATCH_REGEX",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "^(view_item|view_cart|add_to_cart|remove_from_cart|begin_checkout|add_shipping_info|add_payment_info)$"
+          }
+        ]
+      }
+    ],
+    "filter": [
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{DLV - dl_source}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "your_bridge_source"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "1111111",
+    "triggerId": "365",
+    "name": "CE - GA4 ecommerce (regex) | CZ",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+      {
+        "type": "MATCH_REGEX",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "^(view_item|view_cart|add_to_cart|remove_from_cart|begin_checkout|add_shipping_info|add_payment_info)$"
+          }
+        ]
+      }
+    ],
+    "filter": [
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{DLV - dl_source}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "your_bridge_source"
+          }
+        ]
+      },
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{Page Hostname}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "www.example.cz"
+          }
+        ]
+      }
+    ],
+    "notes": "Usporna varianta: jeden GA4 event tag s Event Name {{Event}}."
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "1111111",
+    "triggerId": "363",
+    "name": "CE - purchase",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "purchase"
+          }
+        ]
+      }
+    ],
+    "filter": [
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{DLV - dl_source}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "your_bridge_source"
+          }
+        ]
+      },
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{JS - Purchase Already Fired}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "false"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "1111111",
+    "triggerId": "475",
+    "name": "All Pages | CZ/PL",
+    "type": "PAGEVIEW",
+    "filter": [
+      {
+        "type": "MATCH_REGEX",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{Page Hostname}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "www.example.cz|www.example.pl"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "1111111",
+    "triggerId": "349",
+    "name": "CE - Google Ads Ecommerce events (regex)",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+      {
+        "type": "MATCH_REGEX",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "^(view_item|view_cart|add_to_cart|begin_checkout)$"
+          }
+        ]
+      }
+    ],
+    "filter": [
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{DLV - dl_source}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "your_bridge_source"
+          }
+        ]
+      }
+    ]
+  }
+]

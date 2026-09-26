@@ -1,0 +1,96 @@
+[
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "clientId": "1",
+    "name": "GA4",
+    "type": "gaaw_client",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "cookieDomain",
+        "value": "auto"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "cookieMaxAgeInSec",
+        "value": "63072000"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "activateDefaultPaths",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "cookiePath",
+        "value": "/"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "migrateFromJsClientId",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "cookieManagement",
+        "value": "server"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "cookieName",
+        "value": "FPID"
+      }
+    ]
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "clientId": "55",
+    "name": "Google Tag Manager Web Container",
+    "type": "gtm_client",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "activateResponseCompression",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "isPathMandatory",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "activateGeoResolution",
+        "value": "true"
+      },
+      {
+        "type": "LIST",
+        "key": "allowedContainerIds",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "containerId",
+                "value": "GTM-WEBXXXX"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "path",
+                "value": "/xxxxx"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "region",
+        "value": "{{Visitor Region}}"
+      }
+    ]
+  }
+]

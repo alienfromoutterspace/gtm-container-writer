@@ -1,0 +1,850 @@
+[
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "tagId": "114",
+    "name": "GA4 - Config",
+    "type": "sgtmgaaw",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "redactVisitorIp",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "epToIncludeDropdown",
+        "value": "all"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "upToIncludeDropdown",
+        "value": "all"
+      }
+    ],
+    "firingTriggerId": [
+      "80"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+      "type": "MAP"
+    },
+    "consentSettings": {
+      "consentStatus": "NOT_SET"
+    }
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "tagId": "119",
+    "name": "Google Ads - Conversion Tracking",
+    "type": "sgtmadsct",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "productReportingDataSource",
+        "value": "CUSTOM"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableNewCustomerReporting",
+        "value": "false"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableConversionLinker",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "awFeedCountry",
+        "value": "{{ID Lookup - Google Merchant Center Feed Country}}"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableProductReporting",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "conversionValue",
+        "value": "{{Event Data - value}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "awFeedLanguage",
+        "value": "{{ID Lookup - Google Merchant Center Feed Lang}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "conversionId",
+        "value": "{{Google Ads MCC Conversion ID}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "currencyCode",
+        "value": "{{Event Data - currency}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "awMerchantId",
+        "value": "{{ID Lookup - Google Merchant Center ID}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "conversionLabel",
+        "value": "{{Lookup Table - Google Ads Conversion Label}}"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "rdp",
+        "value": "false"
+      }
+    ],
+    "firingTriggerId": [
+      "88"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+      "type": "MAP"
+    },
+    "consentSettings": {
+      "consentStatus": "NOT_SET"
+    }
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "tagId": "118",
+    "name": "Google Ads - Remarketing MCC account",
+    "type": "sgtmadsremarket",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "enableConversionLinker",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableDynamicRemarketing",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableCustomParams",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "userIdDataSource",
+        "value": "EVENT_DATA"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "remarketingEventDataSource",
+        "value": "EVENT_DATA"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableUserId",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "conversionId",
+        "value": "{{Google Ads MCC Conversion ID}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "customParamsFormat",
+        "value": "EVENT_DATA"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "rdp",
+        "value": "false"
+      }
+    ],
+    "firingTriggerId": [
+      "88",
+      "87",
+      "2147479574"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+      "type": "MAP"
+    },
+    "consentSettings": {
+      "consentStatus": "NOT_SET"
+    }
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "tagId": "117",
+    "name": "Google Ads - Remarketing Sub-accounts",
+    "type": "sgtmadsremarket",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "enableConversionLinker",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableDynamicRemarketing",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableCustomParams",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "userIdDataSource",
+        "value": "EVENT_DATA"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "remarketingEventDataSource",
+        "value": "EVENT_DATA"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableUserId",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "conversionId",
+        "value": "{{Regex Table - Google Ads Sub-accounts Conversion ID}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "customParamsFormat",
+        "value": "EVENT_DATA"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "rdp",
+        "value": "false"
+      }
+    ],
+    "firingTriggerId": [
+      "88",
+      "2147479574",
+      "87"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+      "type": "MAP"
+    },
+    "consentSettings": {
+      "consentStatus": "NOT_SET"
+    }
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "tagId": "131",
+    "name": "Meta Pixel - Config + Ecommerce",
+    "type": "cvt_5TP8W",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "autoMapCustomData",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "adStorageConsent",
+        "value": "required"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "autoMapServerEventData",
+        "value": "true"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "eventNameCustom",
+        "value": "{{Lookup Table - Meta Ads Event Names}}"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "generateFbp",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "autoMapUserData",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "overrideCookieDomain",
+        "value": "false"
+      },
+      {
+        "type": "LIST",
+        "key": "userDataList",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "em"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Event Data - user_data.sha256_email_address}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "ph"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Event Data - user_data.sha256_phone_number}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "fbc"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{cookie._fbc | freshest}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "fbp"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{cookie._fbp | freshest}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "external_id"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Event Data - user_id}}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "accessToken",
+        "value": "{{Constant - Meta Pixel API}}"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "useAppSecretProof",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "inheritEventName",
+        "value": "override"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "actionSource",
+        "value": "website"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "pixelId",
+        "value": "{{ID Lookup - Meta Pixel ID}}"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "useHttpOnlyCookie",
+        "value": "false"
+      },
+      {
+        "type": "LIST",
+        "key": "customDataList",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "value"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Event Data - value}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "currency"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Event Data - currency}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "order_id"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Event Data - transaction_id}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "content_type"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "product"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "contents"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Parsed - meta_contents}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "content_ids"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Parsed - meta_content_ids}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "num_items"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Parsed - meta_num_items}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "content_name"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Parsed - meta_content_name}}"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "content_category"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Parsed - meta_content_category}}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "userDataObject",
+        "value": "{{Event Data - user_data}}"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "useOptimisticScenario",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "eventName",
+        "value": "custom"
+      },
+      {
+        "type": "LIST",
+        "key": "serverEventDataList",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "event_id"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{Event Data - event_id}}_{{Lookup Table - Meta Ads Event Names}}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableMultipixelSetup",
+        "value": "false"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "enableEventEnhancement",
+        "value": "false"
+      }
+    ],
+    "firingTriggerId": [
+      "88",
+      "87"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+      "type": "MAP"
+    },
+    "consentSettings": {
+      "consentStatus": "NOT_SET"
+    }
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "tagId": "153",
+    "name": "CM | Config",
+    "type": "cvt_PH3XM",
+    "parameter": [
+      {
+        "type": "LIST",
+        "key": "cookies",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "meta_click"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{cookie._fbc | freshest}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "expiration",
+                "value": "7776000"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "domain",
+                "value": "auto"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "sameSite",
+                "value": "lax"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "httpOnly",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "setEmpty",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "encodeValue",
+                "value": "false"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "meta_browser"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{cookie._fbp | freshest}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "expiration",
+                "value": "31536000"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "domain",
+                "value": "auto"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "sameSite",
+                "value": "lax"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "httpOnly",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "setEmpty",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "encodeValue",
+                "value": "false"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "seznam_click"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{cookie.sznaiid | freshest}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "expiration",
+                "value": "7776000"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "domain",
+                "value": "auto"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "sameSite",
+                "value": "lax"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "httpOnly",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "setEmpty",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "encodeValue",
+                "value": "false"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "seznam_sid"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{cookie.sid | freshest}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "expiration",
+                "value": "2592000"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "domain",
+                "value": "auto"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "sameSite",
+                "value": "lax"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "httpOnly",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "setEmpty",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "encodeValue",
+                "value": "false"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "name",
+                "value": "seznam_udid"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "{{cookie.udid | freshest}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "expiration",
+                "value": "2592000"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "domain",
+                "value": "auto"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "sameSite",
+                "value": "lax"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "httpOnly",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "setEmpty",
+                "value": "true"
+              },
+              {
+                "type": "BOOLEAN",
+                "key": "encodeValue",
+                "value": "false"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "firingTriggerId": [
+      "80"
+    ],
+    "tagFiringOption": "ONCE_PER_EVENT",
+    "monitoringMetadata": {
+      "type": "MAP"
+    },
+    "consentSettings": {
+      "consentStatus": "NOT_SET"
+    }
+  }
+]

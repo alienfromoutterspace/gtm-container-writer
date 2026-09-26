@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Local, potentially-sensitive GTM exports — never commit real containers
+# (the sanitized fragments under gtm-container-builder/examples/ are the only JSON tracked)
+/*.json
+GTM-*.json
+*container*.json
+!gtm-container-builder/examples/*.json

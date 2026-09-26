@@ -1,0 +1,645 @@
+[
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "82",
+    "name": "Event Data - event_id",
+    "type": "ed",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "keyPath",
+        "value": "event_id"
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "94",
+    "name": "Event Data - user_data.sha256_email_address",
+    "type": "cvt_NFBZ7",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "input",
+        "value": "{{Event Data - user_data.email}}"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "encoding",
+        "value": "hex"
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "142",
+    "name": "Parsed - meta_contents",
+    "type": "cvt_MQRVK",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "actionType",
+        "value": "parse"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "rawData",
+        "value": "{{Event Data - meta_contents}}"
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "138",
+    "name": "cookie._fbc | freshest",
+    "type": "cvt_2222222_133",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "noDecode",
+        "value": "false"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "debug",
+        "value": "false"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "useSeed",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "tsMode",
+        "value": "dotIndex"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "tsIndex",
+        "value": "2"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "strategy",
+        "value": "newest"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "browserCookie",
+        "value": "_fbc"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "serverCookie",
+        "value": "meta_click"
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "84",
+    "name": "ID Lookup - Meta Pixel ID",
+    "type": "cvt_2222222_154",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "productionAdvancedCheckbox",
+        "value": "false"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "productionHostnameLookupCheckbox",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "productionHostnameLookupTableStripWWW",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "productionCustomLookupCheckbox",
+        "value": "false"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "inDebugMode",
+        "value": "false"
+      },
+      {
+        "type": "LIST",
+        "key": "productionHostnameLookupTable",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "matchType",
+                "value": "equals"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "example.cz"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "id",
+                "value": "<META-PIXEL-ID-CZ>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "matchType",
+                "value": "equals"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "example.sk"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "id",
+                "value": "<META-PIXEL-ID-SK>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "matchType",
+                "value": "equals"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "wholesale.example.cz"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "id",
+                "value": "<AW-CONV-ID-XX>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "matchType",
+                "value": "equals"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "wholesale.example.sk"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "id",
+                "value": "<AW-CONV-ID-XX>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "matchType",
+                "value": "equals"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "example.pl"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "id",
+                "value": "<META-PIXEL-ID-PL>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "matchType",
+                "value": "equals"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "example.hu"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "id",
+                "value": "<META-PIXEL-ID-HU>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "nonProductionCheckbox",
+        "value": "false"
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "122",
+    "name": "Regex Table - Google Ads Sub-accounts Conversion ID",
+    "type": "remm",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "input",
+        "value": "{{Event Data - page_hostname}}"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "fullMatch",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "replaceAfterMatch",
+        "value": "true"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "ignoreCase",
+        "value": "true"
+      },
+      {
+        "type": "LIST",
+        "key": "map",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "^(www\\.)?example\\.cz$"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "<AW-CONV-ID-CZ>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "^(www\\.)?example\\.sk$"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "<AW-CONV-ID-SK>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "^(www\\.|velkoobchod\\.)?domain\\.cz$"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "<AW-CONV-ID-XX>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "^(www\\.|velkoobchod\\.)?domain\\.sk$"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "<AW-CONV-ID-XX>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "(^|\\.)example\\.pl$"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "<AW-CONV-ID-PL>"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "(^|\\.)example\\.hu$"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "<AW-CONV-ID-HU>"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "112",
+    "name": "Visitor Region",
+    "type": "vr",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "resolutionOptions",
+        "value": "requestHeaders"
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "111",
+    "name": "Request Header - X-Gclb-Country",
+    "type": "rh",
+    "parameter": [
+      {
+        "type": "TEMPLATE",
+        "key": "headerName",
+        "value": "X-Gclb-Country"
+      }
+    ],
+    "formatValue": {}
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "variableId": "140",
+    "name": "Lookup Table - Meta Ads Event Names",
+    "type": "smm",
+    "parameter": [
+      {
+        "type": "BOOLEAN",
+        "key": "setDefaultValue",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "input",
+        "value": "{{Event Name}}"
+      },
+      {
+        "type": "LIST",
+        "key": "map",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "add_to_cart"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "AddToCart"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "begin_checkout"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "InitiateCheckout"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "investice_lead"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "Lead"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "newsletter_subscribe"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "Subscribe"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "purchase"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "Purchase"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "sign_up"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "CompleteRegistration"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "add_payment_info"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "AddPaymentInfo"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "view_item"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "ViewContent"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "page_view"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "PageView"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "add_shipping_info"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "AddShippingInfo"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "remove_from_cart"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "RemoveFromCart"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "key",
+                "value": "view_cart"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "value",
+                "value": "ViewCart"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "formatValue": {}
+  }
+]

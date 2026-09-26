@@ -1,0 +1,175 @@
+[
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "transformationId": "170",
+    "name": "Seznam - Exclude parameters",
+    "type": "tf_exclude_params",
+    "parameter": [
+      {
+        "type": "LIST",
+        "key": "excludedParamsTable",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "meta_contents"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "meta_content_ids"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "client_id"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "ecommerce"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "ga_session_id"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "ga_session_number"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "items"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "language"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "logged_in"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "meta_content_category"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "meta_content_name"
+              }
+            ]
+          },
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "excludedParams",
+                "value": "meta_num_items"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "matchingConditionsEnabled",
+        "value": "false"
+      },
+      {
+        "type": "BOOLEAN",
+        "key": "allTagsExcept",
+        "value": "false"
+      },
+      {
+        "type": "TEMPLATE",
+        "key": "booleanExpressionString"
+      },
+      {
+        "type": "LIST",
+        "key": "affectedTags"
+      },
+      {
+        "type": "LIST",
+        "key": "affectedTagTypes",
+        "list": [
+          {
+            "type": "MAP",
+            "map": [
+              {
+                "type": "TEMPLATE",
+                "key": "tagType",
+                "value": "cvt_2222222_66"
+              },
+              {
+                "type": "LIST",
+                "key": "tagTypeExceptions"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

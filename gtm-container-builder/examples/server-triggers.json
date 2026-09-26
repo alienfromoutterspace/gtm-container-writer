@@ -1,0 +1,135 @@
+[
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "triggerId": "80",
+    "name": "GA4 Client",
+    "type": "ALWAYS",
+    "filter": [
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{Client Name}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "GA4"
+          }
+        ]
+      },
+      {
+        "type": "MATCH_REGEX",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{Event Name}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "PageView|ViewContent|AddToCart|Purchase|InitiateCheckout|AddPaymentInfo|AddShippingInfo|RemoveFromCart|ViewCart"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "negate",
+            "value": "true"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "triggerId": "78",
+    "name": "Custom Event - PascalCase Regex",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+      {
+        "type": "MATCH_REGEX",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "PageView|ViewContent|AddToCart|Purchase|InitiateCheckout|AddPaymentInfo|AddShippingInfo|RemoveFromCart|ViewCart"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "triggerId": "79",
+    "name": "Custom Event - PascalCase Regex | CZ",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+      {
+        "type": "MATCH_REGEX",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "PageView|ViewContent|AddToCart|Purchase|InitiateCheckout|AddPaymentInfo|AddShippingInfo|RemoveFromCart|ViewCart"
+          }
+        ]
+      }
+    ],
+    "filter": [
+      {
+        "type": "CONTAINS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{Event Data - page_hostname}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "example.cz"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "accountId": "0000000000",
+    "containerId": "2222222",
+    "triggerId": "87",
+    "name": "Custom Event - page_view",
+    "type": "CUSTOM_EVENT",
+    "customEventFilter": [
+      {
+        "type": "EQUALS",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "arg0",
+            "value": "{{_event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "arg1",
+            "value": "page_view"
+          }
+        ]
+      }
+    ]
+  }
+]

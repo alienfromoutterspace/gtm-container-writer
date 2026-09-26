@@ -1,0 +1,65 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-09-10 05:47:33",
+  "containerVersion": {
+    "path": "accounts/123/containers/456/versions/0",
+    "accountId": "123",
+    "containerId": "456",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/123/containers/456",
+      "accountId": "123",
+      "containerId": "456",
+      "name": "Test sGTM",
+      "publicId": "GTM-TEST99",
+      "usageContext": [
+        "SERVER"
+      ],
+      "fingerprint": "1789019253707",
+      "tagManagerUrl": "",
+      "features": {
+        "supportUserPermissions": true,
+        "supportEnvironments": true,
+        "supportWorkspaces": true,
+        "supportGtagConfigs": false,
+        "supportBuiltInVariables": true,
+        "supportClients": true,
+        "supportFolders": true,
+        "supportTags": true,
+        "supportTemplates": true,
+        "supportTriggers": true,
+        "supportVariables": true,
+        "supportVersions": true,
+        "supportZones": true,
+        "supportTransformations": true
+      },
+      "tagIds": [
+        "GTM-TEST99"
+      ],
+      "taggingServerUrls": [
+        "https://hub.example.cz"
+      ]
+    },
+    "builtInVariable": [
+      {
+        "type": "EVENT_NAME",
+        "name": "Event Name",
+        "accountId": "123",
+        "containerId": "456"
+      },
+      {
+        "type": "CLIENT_NAME",
+        "name": "Client Name",
+        "accountId": "123",
+        "containerId": "456"
+      }
+    ],
+    "tag": [],
+    "trigger": [],
+    "variable": [],
+    "folder": [],
+    "fingerprint": "1789019253707",
+    "client": [],
+    "transformation": []
+  }
+}
