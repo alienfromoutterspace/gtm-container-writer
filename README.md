@@ -40,9 +40,10 @@ GA4→sGTM transport bus.
 **custom templates** — frequently-reused own-code templates in the `.tpl` `___SECTION___` export
 format. They ship with the skill (so Claude can embed the real source as a `customTemplate[]` entry
 when building a container) **and** are separately downloadable — grab any `.tpl` and import it
-straight into GTM's Template Editor. Currently included: **ID Lookup** (hostname→ID variable,
-pattern 1), a **Write to Firestore** server tag, and a **buyer_accepts_marketing → consent** web
-variable. See [`templates/README.md`](./gtm-container-builder/templates/README.md) for the
+straight into GTM's Template Editor. Currently included: **ID Lookup** as a Web/Server pair
+(hostname→ID variable, pattern 1), a **Write to Firestore** server tag, and a
+**buyer_accepts_marketing → consent** web variable. See
+[`templates/README.md`](./gtm-container-builder/templates/README.md) for the
 catalogue, import steps, and the `.tpl` → `customTemplate[]` workflow.
 
 ## Repository layout

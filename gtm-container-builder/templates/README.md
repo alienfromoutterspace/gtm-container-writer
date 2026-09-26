@@ -17,7 +17,8 @@ These serve two purposes:
 
 | file | display name | `INFO.type` | context | what it does |
 | --- | --- | --- | --- | --- |
-| `id-lookup.tpl` | ID Lookup | `MACRO` (variable) | WEB | Returns the correct account/tracking ID for the current context by evaluating an ordered set of rules — debug-mode override, non-production rules, and production lookups by custom variable or by hostname (with optional `www.` stripping). The keystone of a one-container-many-markets setup (**SKILL.md pattern 1**). First matching rule wins. |
+| `id-lookup-web.tpl` | ID Lookup | `MACRO` (variable) | WEB | Returns the correct account/tracking ID for the current context by evaluating an ordered set of rules — debug-mode override, non-production rules, and production lookups by custom variable or by hostname (with optional `www.` stripping). The keystone of a one-container-many-markets setup (**SKILL.md pattern 1**). First matching rule wins. Reads the page hostname from `getUrl("host")`. |
+| `id-lookup-server.tpl` | ID Lookup | `MACRO` (variable) | SERVER | The sGTM counterpart of `id-lookup-web.tpl` — identical rule UI and match logic, but keyed off the **incoming event data**: hostname comes from `getEventData('page_hostname')`, falling back to parsing it out of `page_location`. Declares the `read_event_data` permission. Keep the two in sync when onboarding a market (**SKILL.md pattern 1**, WEB-vs-SERVER note). |
 | `write-to-firestore.tpl` | Hephaestus - Write to Firestore | `TAG` | SERVER | Writes a set of attributes to a Firestore document. Two modes: **Replace entire document**, or **Edit or add** (per-attribute "overwrite if exists" control, reading the existing doc first). Needs the `access_firestore` (`read_write`) and `logging` permissions declared in the template. |
 | `consent-from-buyer-marketing.tpl` | buyer_accepts_marketing → consent | web template variable | WEB | Maps a boolean `buyer_accepts_marketing` field (e.g. a Shopify webhook value) to a Google Consent Mode v2 state object — granting `ad_storage`, `ad_user_data`, `ad_personalization`, `analytics_storage`, `personalization_storage` on consent, with `functionality_storage` / `security_storage` always granted. |
 
@@ -31,8 +32,10 @@ not a `galleryReference`), so a tag/variable that uses one is encoded
   then pick the `.tpl` file.
 - The template appears under your container's own templates and can be added like any tag/variable.
 
-`write-to-firestore.tpl` is a **server** template — import it in a **Server** container's Template
-Editor. `id-lookup.tpl` and `consent-from-buyer-marketing.tpl` are **web** templates.
+`id-lookup-server.tpl` and `write-to-firestore.tpl` are **server** templates — import them in a
+**Server** container's Template Editor. `id-lookup-web.tpl` and `consent-from-buyer-marketing.tpl`
+are **web** templates. The two ID Lookup files are the WEB and SERVER halves of the same variable —
+in a paired web+sGTM setup you typically import both and keep their rule tables aligned.
 
 ## Use one inside a container JSON (the `customTemplate[]` workflow)
 
